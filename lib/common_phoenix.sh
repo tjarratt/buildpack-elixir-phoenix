@@ -27,10 +27,10 @@ file_contents() {
 load_config() {
   info "Loading config..."
 
-  local custom_config_file="${build_dir}/phoenix_static_buildpack.config"
+  local custom_config_file="${build_path}/phoenix_static_buildpack.config"
 
   # Source for default versions file from buildpack first
-  source "${build_pack_dir}/phoenix_static_buildpack.config"
+  source "${build_pack_path}/phoenix_static_buildpack.config"
 
   if [ -f $custom_config_file ]; then
     source $custom_config_file
@@ -47,15 +47,15 @@ load_config() {
 
 export_config_vars() {
   for config_var in ${config_vars_to_export[@]}; do
-    if [ -d $env_dir ] && [ -f $env_dir/${config_var} ]; then
-      export ${config_var}=$(cat $env_dir/${config_var})
+    if [ -d $env_path ] && [ -f $env_path/${config_var} ]; then
+      export ${config_var}=$(cat $env_path/${config_var})
     fi
   done
 }
 
 export_mix_env() {
-  if [ -d $env_dir ] && [ -f $env_dir/MIX_ENV ]; then
-    export MIX_ENV=$(cat $env_dir/MIX_ENV)
+  if [ -d $env_path ] && [ -f $env_path/MIX_ENV ]; then
+    export MIX_ENV=$(cat $env_path/MIX_ENV)
   else
     export MIX_ENV=prod
   fi
