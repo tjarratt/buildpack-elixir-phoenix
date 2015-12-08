@@ -51,7 +51,7 @@ post_compile_hook
 write_profile_d_script
 
 # Ensure dirs are present
-mkdir -p $1 $2 $3
+#mkdir -p $1 $2 $3
 
 build_dir=$(cd $1 && pwd)
 cache_dir=$(cd $2 && pwd)
