@@ -1,4 +1,8 @@
-# Heroku Buildpack for Elixir
+# Cloud Foundry Buildpack for Phoenix
+
+
+*Important: This is not my work per se. I Only concatenated two buildpacks together: [Heroku Builpack for Elixir](https://github.com/HashNuke/heroku-buildpack-elixir.git) and  [Phoenix Static Buildpack](https://github.com/gjaldon/heroku-buildpack-phoenix-static), because I couldn't find a way to use two buildpacks in Bluemix(IBM) in my app deplyment*
+
 
 ## Features
 
