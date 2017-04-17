@@ -67,7 +67,7 @@ function export_mix_env() {
 }
 
 function check_stack() {
-  if [ ${STACK} = "cedar" ]; then
+  if [ ${STACK} == "cedar" ]; then
     echo "ERROR: cedar stack is not supported, upgrade to cedar-14"
     exit 1
   fi
@@ -81,7 +81,7 @@ function check_stack() {
 }
 
 function clean_cache() {
-  if [ $always_rebuild = true ]; then
+  if [ $always_rebuild == true ]; then
     output_section "Cleaning all cache to force rebuilds"
     rm -rf $cache_path/*
   fi
